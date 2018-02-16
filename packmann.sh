@@ -29,7 +29,6 @@ then
         		for i in $(cat Software_Backup.txt);
         		do
                 		dnf install -y $i
-                		#echo $i 
         		done
 		else
 			echo "Keine Backup-Datei gefunden"
@@ -59,7 +58,6 @@ then
         		for i in $(cat Software_Backup.txt);
         		do
                 		pacman -S --needed --noconfirm $i
-                		#echo $i 
         		done
 		else
 			echo "Keine Backup-Datei gefunden"
@@ -89,7 +87,6 @@ then
         		for i in $(cat Software_Backup.txt);
         		do
                 		yum install -y $i
-                		#echo $i 
         		done
 		else
 			echo "Keine Backup-Datei gefunden"
@@ -119,7 +116,6 @@ then
         		for i in $(cat Software_Backup.txt);
         		do
                 		apt install -y $i
-                		#echo $i 
         		done
 		else
 			echo "Keine Backup-Datei gefunden"
