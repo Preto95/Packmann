@@ -16,7 +16,7 @@
 
 
 <p>At 2nd download this repo:</p>
-<p><code>$ git clone </code></p>
+<p><code>$ git clone https://github.com/Preto95/Packmann.git</code></p>
 
 <p>At 3rd run the script with root permissions:</p>
 <p><code># ./packmann.sh</code></p>
