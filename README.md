@@ -22,5 +22,5 @@
 <p><code># ./packmann.sh</code></p>
 
 <p>Update the program:</p>
-<p><code>$ git pull<code></p>
+<p><code>$ git pull</code></p>
 
