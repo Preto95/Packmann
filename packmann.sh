@@ -21,7 +21,7 @@ then
 	then
 		rpm -qa > Software_Backup.txt
 		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-   
+
  	elif [ $choose -eq 4 ]
  	then
 		if [ -f Software_Backup.txt ]
@@ -50,7 +50,7 @@ then
 	then
 		pacman -Qnq > Software_Backup_pacman.txt
 		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-   
+
  	elif [ $choose -eq 4 ]
  	then
 		if [ -f Software_Backup_pacman.txt ]
@@ -79,7 +79,7 @@ then
 	then
 		rpm -qa > Software_Backup.txt
 		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-   
+
  	elif [ $choose -eq 4 ]
  	then
 		if [ -f Software_Backup.txt ]
@@ -108,7 +108,7 @@ then
 	then
 		apt -list --installed > Software_Backup.txt
 		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-   
+
  	elif [ $choose -eq 4 ]
  	then
 		if [ -f Software_Backup.txt ]
@@ -122,4 +122,8 @@ then
 		fi
 
 	fi
+
+elif zypper --version	#For openSUSE systems
+then
+	
 fi
