@@ -133,7 +133,7 @@ then
 
 	elif [ $choose -eq 2 ]
 	then
-		zypper up -y
+		zypper up
 
 	elif [ $choose -eq 3 ]
 	then
