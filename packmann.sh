@@ -1,5 +1,7 @@
 #!/bin/bash
 
+filename="software_backup.txt"
+
 echo "<1> Update the Repos"
 echo "<2> Update the System"
 echo "<3> Backup installed programs"
@@ -19,14 +21,14 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-		rpm -qa > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
+		rpm -qa > $filename
+		echo "Backup is stored in $(pwd)/$filename"
 
  	elif [ $choose -eq 4 ]
  	then
-		if [ -f Software_Backup.txt ]
+		if [ -f $filename ]
 		then
-        		for i in $(cat Software_Backup.txt);
+        		for i in $(cat $filename);
         		do
                 		dnf install -y $i
         		done
@@ -48,14 +50,14 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-		pacman -Qnq > Software_Backup_pacman.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
+		pacman -Qnq > $filename
+		echo "Backup is stored in $(pwd)/$filename"
 
  	elif [ $choose -eq 4 ]
  	then
-		if [ -f Software_Backup_pacman.txt ]
+		if [ -f $filename ]
 		then
-        		for i in $(cat Software_Backup.txt);
+        		for i in $(cat $filename);
         		do
                 		pacman -S --needed --noconfirm $i
         		done
@@ -77,14 +79,14 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-		rpm -qa > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
+		rpm -qa > $filename
+		echo "Backup is stored in $(pwd)/$filename"
 
  	elif [ $choose -eq 4 ]
  	then
-		if [ -f Software_Backup.txt ]
+		if [ -f $filename ]
 		then
-        		for i in $(cat Software_Backup.txt);
+        		for i in $(cat $filename);
         		do
                 		yum install -y $i
         		done
@@ -106,14 +108,14 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-		apt -list --installed > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
+		apt list --installed > $filename
+		echo "Backup is stored in $(pwd)/$filename"
 
  	elif [ $choose -eq 4 ]
  	then
-		if [ -f Software_Backup.txt ]
+		if [ -f $filename ]
 		then
-        		for i in $(cat Software_Backup.txt);
+        		for i in $(cat $filename);
         		do
                 		apt install -y $i
         		done
@@ -123,7 +125,33 @@ then
 
 	fi
 
-elif zypper --version	#For openSUSE systems
+elif zypper --version	#For SUSE systems
 then
-	
+	if [ $choose -eq 1 ]
+	then
+		zypper up
+
+	elif [ $choose -eq 2 ]
+	then
+		zypper up -y
+
+	elif [ $choose -eq 3 ]
+	then
+		rpm -qa > $filename
+		echo "Backup is stored in $(pwd)/$filename"
+
+ 	elif [ $choose -eq 4 ]
+ 	then
+		if [ -f $filename ]
+		then
+        		for i in $(cat $filename);
+        		do
+                		zypper in $i
+        		done
+		else
+			echo "Keine Backup-Datei gefunden"
+		fi
+
+	fi
+
 fi
