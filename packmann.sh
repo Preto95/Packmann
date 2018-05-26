@@ -133,12 +133,11 @@ then
 
 	elif [ $choose -eq 2 ]
 	then
-		zypper dup
+		zypper dup -y
 
 	elif [ $choose -eq 3 ]
 	then
 		rpm -qa > $filename
-		echo "Backup is stored in $(pwd)/$filename"
 
  	elif [ $choose -eq 4 ]
  	then
