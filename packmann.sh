@@ -21,13 +21,8 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-<<<<<<< HEAD
-		rpm -qa > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-=======
 		rpm -qa > $filename
 		echo "Backup is stored in $(pwd)/$filename"
->>>>>>> openSUSE-integration
 
  	elif [ $choose -eq 4 ]
  	then
@@ -55,13 +50,8 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-<<<<<<< HEAD
-		pacman -Qnq > Software_Backup_pacman.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-=======
 		pacman -Qnq > $filename
 		echo "Backup is stored in $(pwd)/$filename"
->>>>>>> openSUSE-integration
 
  	elif [ $choose -eq 4 ]
  	then
@@ -89,13 +79,8 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-<<<<<<< HEAD
-		rpm -qa > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-=======
 		rpm -qa > $filename
 		echo "Backup is stored in $(pwd)/$filename"
->>>>>>> openSUSE-integration
 
  	elif [ $choose -eq 4 ]
  	then
@@ -123,13 +108,8 @@ then
 
 	elif [ $choose -eq 3 ]
 	then
-<<<<<<< HEAD
-		apt list --installed > Software_Backup.txt
-		echo "Backup is stored in $(pwd)/Software_Backup.txt"
-=======
 		apt list --installed > $filename
 		echo "Backup is stored in $(pwd)/$filename"
->>>>>>> openSUSE-integration
 
  	elif [ $choose -eq 4 ]
  	then
